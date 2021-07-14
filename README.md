@@ -10,4 +10,10 @@ In the project directory, you can run:
 
 Runs the server and web.
 
-### `yarn start-all`
+### `yarn clean-all`
+
+Clean all node_modules folder in all packages
+
+### `yarn install-all`
+
+Install dependencies

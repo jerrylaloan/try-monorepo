@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start-all": "lerna run start --scope={@try-monorepo/server,@try-monorepo/web} --stream",
+    "clean-all": "lerna clean",
+    "install-all": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

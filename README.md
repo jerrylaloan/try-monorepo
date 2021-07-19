@@ -17,3 +17,7 @@ Clean all node_modules folder in all packages
 ### `yarn install-all`
 
 Install dependencies
+
+### `yarn start-web`
+
+Start web project only

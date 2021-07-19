@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import PrivateRoute from "./PrivateRoute";
+import Private from "./Private";
+import Login from "./Login";
+import AuthProvider from "./AuthProvider";
+import Public from "./Public";
+import NavBar from "./NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <NavBar />
+
+          <Switch>
+            <Route path="/" component={Public} exact />
+            <Route path="/login" component={Login} exact />
+            <PrivateRoute path="/private-page" component={Private} exact />
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
+    </ChakraProvider>
   );
 }
 
